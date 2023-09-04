@@ -53,7 +53,7 @@
 <div class = "wrapper">
 	<input type="time" id="start" name="start" value={$startHour} on:blur={() => updateHour(true)} required class="start"/>
 	<div class="text">ÀS</div>
-	<input type="time" id="finish" name="finish" value={$finishHour}  on:blur={() => updateHour(true)} required class="start"/>
+	<input type="time" id="finish" name="finish" value={$finishHour}  on:blur={() => updateHour(false)} required class="start"/>
 </div>
 
 <style>
