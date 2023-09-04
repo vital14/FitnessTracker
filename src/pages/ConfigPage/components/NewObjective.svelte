@@ -12,18 +12,18 @@
 
 	function updateBreaks() {
 		const input = document.getElementById('breakObjective') as HTMLInputElement | null;
-		const inputContet = input?.value;
-		if (inputContet != undefined) {
-			let newValue: number = parseInt(inputContet);
+		const inputContent = input?.value;
+		if (inputContent != undefined) {
+			let newValue: number = parseInt(inputContent);
 			breakObjective.set(newValue);
 		}
 	}
 
 	function updateWaterObjective() {
 		const input = document.getElementById('waterObjective') as HTMLInputElement | null;
-		const inputContet = input?.value;
-		if (inputContet != undefined) {
-			let newValue: number = parseFloat(inputContet);
+		const inputContent = input?.value;
+		if (inputContent != undefined) {
+			let newValue: number = parseFloat(inputContent);
 			waterObjective.set(newValue);
 		}
 	}
@@ -50,7 +50,7 @@
 				<input
 					type="number"
 					class="custom-break"
-					id="waterObjective"
+					id="breakObjective"
 					inputmode="decimal"
 					value={_breakObjective}
 					on:change={() => updateBreaks()}
