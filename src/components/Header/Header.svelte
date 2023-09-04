@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 import configIcon from '$assets/config.svg';
 import returnIcon from '$assets/arrowBack.svg';
 import { navigate } from "svelte-routing";
+export let text: string; 
 const routePage = () => {
 		navigate("/", {replace:true})
 };
@@ -12,7 +13,7 @@ const routePage = () => {
     <button class="return-button" on:click={routePage}>
       <img src={returnIcon} alt="Return" class="image-return"/>
     </button>
-  <h1>Nível de Hidratação</h1>
+  <h1>{text}</h1>
   <button class="config-button" 
   ><img src={configIcon} alt="Configuration" class="image-config"/></button>
 </div>

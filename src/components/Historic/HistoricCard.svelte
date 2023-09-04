@@ -42,7 +42,7 @@
   }
   .fill-color-break {
     font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: rgb(137, 207, 240) ;
+    background-color: #F98617 ;
     padding: 15px 20px;
     display: flex;
     align-items: center;

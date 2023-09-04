@@ -4,13 +4,17 @@ export let pathImage: string;
 export let text: string;
 let fillCard: Element;
 export let isWaterCard: boolean
-const routePage = () => {
+const routeWater = () => {
     navigate("/water", {replace:true})
+};
+
+const routeBreaks = () => {
+    navigate("/breaks", {replace:true})
 };
 </script>
 
 <button class={isWaterCard ? 'fill-card fill-color-water' : 'fill-card fill-color-break'}
-bind:this={fillCard} on:click={routePage}>
+bind:this={fillCard} on:click={isWaterCard? routeWater : routeBreaks}>
     <div class="wrapper">
         <img src={pathImage} alt="water-bottle" class="image-water"/>
         <div>{text}</div>

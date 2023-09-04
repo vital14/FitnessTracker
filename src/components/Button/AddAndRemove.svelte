@@ -1,30 +1,44 @@
 <script lang='ts'>
 	import { waterProgress } from '$stores/store';
+    import {breakProgress} from '$stores/store'
 	export let actualProgress: number;
-    function addWater() {
+    export let isWater : boolean;
+    function add() {
        const input = document.getElementById('valueAdition') as HTMLInputElement | null;
        const inputContent = input?.value;
        if (inputContent != undefined) {
+        if(isWater){
         let quantity = parseFloat(inputContent)/1000;
 		waterProgress.update((n) => n + quantity);
 		actualProgress.toFixed(2);
+        }
+        else{
+            let quantity = parseFloat(inputContent);
+		    breakProgress.update((n) => n + quantity);
+		    actualProgress.toFixed(2);
+        }
        }
 	}
-    function removeWater(quantity: number) {
-        if(actualProgress !=0){
+    function remove() {
             const input = document.getElementById('valueAdition') as HTMLInputElement | null;
             const inputContent = input?.value;
             if (inputContent != undefined) {
-                let quantity = parseFloat(inputContent)/1000;
-		        waterProgress.update((n) => n - quantity);
-		        actualProgress.toFixed(2);
+                if(isWater){
+                    let quantity = parseFloat(inputContent)/1000;
+		            waterProgress.update((n) => n - quantity);
+		            actualProgress.toFixed(2);
+                }
+                else{
+                    let quantity = parseFloat(inputContent);
+		            breakProgress.update((n) => n - quantity);
+		            actualProgress.toFixed(2);
+                }
             }
-        }
     }
 </script>
-<button class="add-button" on:click={() => addWater()}>Adicionar</button>
+<button class="add-button" on:click={() => add()}>Adicionar</button>
 <input type="number" id="valueAdition" class="value-addition" name="value" maxlength="4"/>
-<button class="remove-button" on:click={() => removeWater(1)}>Remover</button>
+<button class="remove-button" on:click={() => remove()}>Remover</button>
 
 
 <style>
