@@ -1,7 +1,8 @@
 <script lang="ts">
-	import WaterHistoric from './WaterHistoric.svelte';
+	import HistoricCard from './HistoricCard.svelte';
 	import { historicList } from '$stores/historic';
-	import BreakHistoric from './BreakHistoric.svelte';
+	import waterBottle from '$assets/waterBottle.svg';
+	import fitness from '$assets/fitness.svg'
 
 	export let isWaterHistoric: boolean;
 </script>
@@ -11,14 +12,11 @@
         <div class="swipe">Deslize para baixo para ver mais</div>
 		{#if isWaterHistoric}
 			{#each historicList as day}
-				<WaterHistoric data={day.date} dayProgress={day.water} />
+				<HistoricCard data={day.date} dayProgress={day.water} dayObjective={day.waterObjective} pathImage={waterBottle} type="litros" isWaterCard/>
 			{/each}
 		{:else}
 			{#each historicList as day}
-				<BreakHistoric
-					data={day.date}
-					dayProgress={day.breaks}
-				/>
+				<HistoricCard data={day.date} dayProgress={day.breaks} dayObjective={day.breaksObjective} pathImage={fitness} type="pausas" isWaterCard={false} />
 			{/each}
 		{/if}
 	</div>
@@ -37,7 +35,7 @@
 	.historic-container {
 		width: 96.5vw;
 		height: 33.2vh;
-		margin-top: 18vh;
+		margin-top: 12.5vh;
 		text-align: center;
 	}
     .historic{

@@ -15,7 +15,7 @@
 </div>
 <ObjectiveCard 
   pathImage={imageWater} 
-  text="Gerencie a quantidade de água" 
+  text="Gerencie a quantidade de água ingerida" 
   isWaterCard={true}
 />
 

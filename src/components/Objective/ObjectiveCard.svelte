@@ -33,7 +33,7 @@ bind:this={fillCard} on:click={routePage}>
 	}
 
 	.fill-color-break {
-		background-color: palevioletred;
+		background-color: #F98617;
 		width: 90px;
         width: 95vw;
         height: 15vh;
@@ -42,14 +42,15 @@ bind:this={fillCard} on:click={routePage}>
         border-radius: 10px;
 	}
     .wrapper {
-    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .image-water{
-    width: 10vw;
-    height: 10vh;
-  }
+        color: white;
+        font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .image-water{
+        width: 10vw;
+        height: 10vh;
+    }
 </style>
