@@ -6,7 +6,7 @@
     function add() {
        const input = document.getElementById('valueAdition') as HTMLInputElement | null;
        const inputContent = input?.value;
-       if (inputContent != undefined) {
+       if (inputContent != undefined && inputContent != "") {
         if(isWater){
         let quantity = parseFloat(inputContent)/1000;
 		waterProgress.update((n) => n + quantity);
@@ -22,7 +22,7 @@
     function remove() {
             const input = document.getElementById('valueAdition') as HTMLInputElement | null;
             const inputContent = input?.value;
-            if (inputContent != undefined) {
+            if (inputContent != undefined && inputContent != "") {
                 if(isWater){
                     let quantity = parseFloat(inputContent)/1000;
 		            waterProgress.update((n) => n - quantity);

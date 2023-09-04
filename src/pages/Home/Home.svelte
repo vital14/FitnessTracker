@@ -1,7 +1,12 @@
 <script>
   import ObjectiveCard from "$components/Objective/ObjectiveCard.svelte";
   import imageWater from "$assets/waterBottle.svg";
-  import imageFitness from "$assets/fitness.svg"
+  import imageFitness from "$assets/fitness.svg";
+  import configIcon from '$assets/config.svg';
+  import { navigate } from "svelte-routing";
+  const routeConfig = () => {
+    navigate("/config", {replace:true})
+};
 </script>
 
 <div class="title">
@@ -9,7 +14,10 @@
 </div>
 <div class = "page">
 <div class="text-container">
-  <h1>Seja Bem-vindo,</h1>
+  <div class="wrapper">
+    <h1>Seja Bem-vindo,</h1>
+    <button class="config-button" on:click={routeConfig}><img src={configIcon} alt="Configuration" class="image-config"/></button>
+  </div>
   <h2>Venha monitorar seu dia</h2>
   
 </div>
@@ -46,5 +54,25 @@
     font-size: 50px;
     font-weight: 700;
     font-family:'Courier New', Courier, monospace;
+  }
+  .wrapper {
+    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .config-button {
+		background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+		height: 45px;
+		width: 45px;
+    margin-top: 5px;
+		transition: box-shadow 0.15s, transform 0.15s;
+	}
+  .image-config{
+    width: 25px;
+    height: 25px;
   }
 </style>

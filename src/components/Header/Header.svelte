@@ -6,6 +6,9 @@ export let text: string;
 const routePage = () => {
 		navigate("/", {replace:true})
 };
+const routeConfig = () => {
+            navigate("/config", {replace:true})
+    };
 </script>
 
 <header>
@@ -14,8 +17,7 @@ const routePage = () => {
       <img src={returnIcon} alt="Return" class="image-return"/>
     </button>
   <h1>{text}</h1>
-  <button class="config-button" 
-  ><img src={configIcon} alt="Configuration" class="image-config"/></button>
+  <button class="config-button" on:click={routeConfig}><img src={configIcon} alt="Configuration" class="image-config"/></button>
 </div>
 </header>
 
