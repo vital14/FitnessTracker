@@ -1,12 +1,17 @@
 <script>
 import configIcon from '$assets/config.svg';
 import returnIcon from '$assets/arrowBack.svg';
+import { navigate } from "svelte-routing";
+const routePage = () => {
+		navigate("/", {replace:true})
+};
 </script>
 
 <header>
    <div class="wrapper">
-    <button class="return-button" 
-    ><img src={returnIcon} alt="Return" class="image-return"/></button>
+    <button class="return-button" on:click={routePage}>
+      <img src={returnIcon} alt="Return" class="image-return"/>
+    </button>
   <h1>Nível de Hidratação</h1>
   <button class="config-button" 
   ><img src={configIcon} alt="Configuration" class="image-config"/></button>

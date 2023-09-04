@@ -5,10 +5,9 @@
 
 	export let isWaterHistoric: boolean;
 </script>
-
 <div class="historic-container">
 	<div class="scroll-container">
-        <div class="historic">Historico</div>
+        <div class="historic">Histórico</div>
         <div class="swipe">Deslize para baixo para ver mais</div>
 		{#if isWaterHistoric}
 			{#each historicList as day}
@@ -25,21 +24,21 @@
 	</div>
 </div>
 
+
 <style>
 	.scroll-container {
-		height: 30vh;
+		height: 34vh;
 		overflow: scroll;
+		justify-content: center;
+		text-align: center;
+		justify-items: center;
 	}
 
 	.historic-container {
-		width: 100vw;
-		height: 33.4vh;
-		border-top-right-radius: 40px;
-		border-top-left-radius: 40px;
-		margin-top: 20vh;
-		box-shadow: 0px -4px 4px #ffffff25;
+		width: 96.5vw;
+		height: 33.2vh;
+		margin-top: 18vh;
 		text-align: center;
-		padding-top: 3vh;
 	}
     .historic{
         font-weight: 700;

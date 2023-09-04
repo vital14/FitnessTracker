@@ -1,47 +1,54 @@
 <script lang="ts">
 	export let data: string = '-';
 	export let dayProgress: number = 0;
-    import waterGlass from "$assets/waterGlass.svg"
+    import waterGlass from "$assets/waterBottle.svg"
 </script>
 
 
 <div class="wrapper">
-  <h1>{data}</h1>
-  <div>{dayProgress} litros</div>
   <div class="image" 
-  ><img src={waterGlass} alt="water-lass" class="water-glass"/></div>
+  ><img src={waterGlass} alt="water-glass" class="water-glass"/></div>
+  <div class="litros">{dayProgress} litros</div>
+  <div class="data">{data}</div>
 </div>
 
 <style>
- h1 {
+ .data {
     font-weight: 700;
     font-size: 15px;
     line-height: 1;
     display: inline-block;
     vertical-align: top;
+    height: auto;
+    color: white;
   }
-    .wrapper {
+
+  .litros{
+    color: white;
+  }
+  .wrapper {
     font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgb(137, 207, 240) ;
     padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1vh;
+    border-radius: 10px;
   }
 
   .image {
-		background-color: transparent;
     background-repeat:no-repeat;
     border: none;
-		height: 45px;
-		width: 45px;
+		height: 6vh;
+		width: 6vh;
 		transition: box-shadow 0.15s, transform 0.15s;
     justify-content: center;
     align-items: center;
 	}
 
   .water-glass{
-    width: 25px;
-    height: 25px;
-    margin-top: 10px;
+    width: 30px;
+    height: 50px;
   }
 </style>

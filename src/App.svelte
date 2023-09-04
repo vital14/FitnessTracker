@@ -1,21 +1,17 @@
-<script lang="ts">
-  import Header from "$components/Header/Header.svelte";
-  import Progress from "$components/Chart/Progress.svelte";
-  import Historic from "$components/Historic/Historic.svelte";
+<!-- App.svelte -->
+<script>
+  import { Router, Link, Route } from "svelte-routing";
+  import Home from "$pages/Home/Home.svelte";
+  import WaterPage from "$pages/WaterPage/WaterPage.svelte";
+
+  export let url = "";
 </script>
 
-<header>
-  <Header />
-</header>
-<main>
-  <div class="chart"><Progress></Progress></div>
-  <Historic isWaterHistoric></Historic>
-</main>
+<Router {url}>
+  <div>
+    <Route path="/"><Home /></Route>
+    <Route path="/water" component={WaterPage} />
+  </div>
+</Router>
 
-<style>
-  .chart{
-    display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  }
-</style>
+<style></style>

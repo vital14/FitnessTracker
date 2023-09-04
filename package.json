@@ -82,6 +82,8 @@
     "@capacitor/android": "^4.8.0",
     "@capacitor/core": "^4.8.0",
     "@capacitor/ios": "^4.8.0",
+    "@ionic/core": "^7.3.2",
+    "svelte-routing": "^2.2.0",
     "svelte-spa-router": "^3.3.0"
   }
 }
