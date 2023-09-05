@@ -1,6 +1,7 @@
 <script lang='ts'>
 	import { waterProgress } from '$stores/store';
     import {breakProgress} from '$stores/store'
+    import { LocalNotifications } from '@capacitor/local-notifications';
 	export let actualProgress: number;
     export let isWater : boolean;
     function add() {
@@ -8,14 +9,16 @@
        const inputContent = input?.value;
        if (inputContent != undefined && inputContent != "") {
         if(isWater){
-        let quantity = parseFloat(inputContent)/1000;
-		waterProgress.update((n) => n + quantity);
-		actualProgress.toFixed(2);
+            let quantity = parseFloat(inputContent)/1000;
+		    waterProgress.update((n) => n + quantity);
+		    actualProgress.toFixed(2);
+            sendWaterNotif();
         }
         else{
             let quantity = parseFloat(inputContent);
 		    breakProgress.update((n) => n + quantity);
 		    actualProgress.toFixed(2);
+            sendRestNotif();
         }
        }
 	}
@@ -34,6 +37,38 @@
 		            actualProgress.toFixed(2);
                 }
             }
+    }
+     
+    function sendWaterNotif(){
+        setInterval(function(){ 
+	    LocalNotifications.schedule({
+        notifications: [
+            {
+                title: "Tome Água",
+                body: "Tome 0.8 ml de água",
+                id: 1,
+                extra: {
+                    route: '/water',
+                },
+            }
+        ]
+    })},900000)
+    }
+
+    function sendRestNotif(){
+        setInterval(function(){ 
+	    LocalNotifications.schedule({
+        notifications: [
+            {
+                title: "Pause para Alongar",
+                body: "Alongue agora ",
+                id: 2,
+                extra: {
+                    route: '/breaks',
+                },
+            }
+        ]
+    })},1800000)
     }
 </script>
 <button class="add-button" on:click={() => add()}>Adicionar</button>

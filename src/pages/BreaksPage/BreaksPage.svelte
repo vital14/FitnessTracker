@@ -2,7 +2,7 @@
     import Header from "$components/Header/Header.svelte";
     import Progress from "$components/Chart/Progress.svelte";
     import Historic from "$components/Historic/Historic.svelte";
-    import AddAndRemove from "$components/Button/AddAndRemove.svelte";
+    import AddAndRemove from "$components/AddAndRemove/AddAndRemove.svelte";
     import { breakObjective, breakProgress } from "$stores/store";
     let actualProgress: number;
 	  let objective: number;
