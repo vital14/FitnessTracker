@@ -24,4 +24,8 @@ npm run dev:ios
 ```
 Isso permitirá com que voê rode o programa em um emulador ios pelo xcode e assim apertar no play.
 
+## Notificação 
+
+Para que a Notificação funcione corretamente, autorize no seu telefone que o aplicativo envie notificações para você
+
 
